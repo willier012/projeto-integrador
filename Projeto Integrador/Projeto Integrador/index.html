@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Race To Survival</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="fotos/Logo.png" type="image/png">
+</head>
+<style>
+    .donut-chart {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: conic-gradient(#D9A404 0% 28%,
+                #8B5E3C 28% 100%);
+        position: relative;
+        margin: 35px auto;
+    }
+
+    /* buraco no centro */
+    .donut-chart::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        /* tamanho do buraco */
+        height: 100px;
+        background: #1E5631;
+        /* mesma cor do fundo do site */
+        border-radius: 50%;
+    }
+
+    .center-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #F0F0F0;
+        font-weight: bold;
+        font-size: 24px;
+        pointer-events: none;
+        /* não interfere em cliques */
+    }
+
+    .donut-chart2 {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: conic-gradient(#D9A404 0% 24%,
+                #8B5E3C 24% 100%);
+        position: relative;
+        margin: 35px auto;
+    }
+
+    /* buraco no centro */
+    .donut-chart2::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        /* tamanho do buraco */
+        height: 100px;
+        background: #1E5631;
+        /* mesma cor do fundo do site */
+        border-radius: 50%;
+    }
+
+    .donut-chart3 {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: conic-gradient(#1A1A1A 0% 25%,
+                #C84B31 25% 60%,
+                #D9A404 60% 90%,
+                #8B5E3C 90% 100%);
+        position: relative;
+        margin: 35px auto;
+    }
+
+    /* buraco no centro */
+    .donut-chart3::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        /* tamanho do buraco */
+        height: 100px;
+        background: #1E5631;
+        /* mesma cor do fundo do site */
+        border-radius: 50%;
+    }
+
+    .donut-chart4 {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: conic-gradient(#0B3D0B 0% 40%,
+                #1A1A1A 40% 60%,
+                #C84B31 60% 75%,
+                #8B5E3C 75% 90%,
+                #D9A404 90% 100%);
+        position: relative;
+        margin: 35px auto;
+    }
+
+    /* buraco no centro */
+    .donut-chart4::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        /* tamanho do buraco */
+        height: 100px;
+        background: #1E5631;
+        /* mesma cor do fundo do site */
+        border-radius: 50%;
+    }
+
+    .donut-chart5 {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: conic-gradient(#8B5E3C 0% 40%,
+                #D9A404 40% 65%,
+                #0B3D0B 65% 80%,
+                #C84B31 80% 90%,
+                #1A1A1A 90% 100%);
+        position: relative;
+        margin: 35px auto;
+    }
+
+    /* buraco no centro */
+    .donut-chart5::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        /* tamanho do buraco */
+        height: 100px;
+        background: #1E5631;
+        /* mesma cor do fundo do site */
+        border-radius: 50%;
+    }
+</style>
+
+<body class="bg-[#0B3D0B]">
+    <header class="fixed top-0 left-0 w-full z-50 grid grid-cols-3 gap-[150px] bg-[#083C1E] text-[#F0F0F0] rounded-lg">
+        <div class=" p-[6px] px-[10px] flex">
+            <img src="fotos/Logo.png" alt="" class="max-h-[50px]">
+            <h1 class=" ml-[25px] my-[15px] font-bold text-center bg-gradient-to-r from-[#F0F0F0] to-[#F0F0F0] bg-no-repeat bg-[length:0%_2px] bg-bottom hover:bg-[length:100%_2px] transition-all duration-500 h-[30px]">RTS</h1>
+        </div>
+        <div class="col-start-3 grid grid-cols-3 gap-[5px] mx-[10px]">
+            <div class="flex"><button class="my-[15px] font-bold text-center bg-gradient-to-r from-[#F0F0F0] to-[#F0F0F0] bg-no-repeat bg-[length:0%_2px] bg-bottom hover:bg-[length:100%_2px] transition-all duration-500 h-[30px]">Home</button></div>
+            <div class="flex"><button class="my-[15px] font-bold text-center bg-gradient-to-r from-[#F0F0F0] to-[#F0F0F0] bg-no-repeat bg-[length:0%_2px] bg-bottom hover:bg-[length:100%_2px] transition-all duration-500 h-[30px]">About</button></div>
+            <div class="flex"><button class="my-[15px] font-bold text-center bg-gradient-to-r from-[#F0F0F0] to-[#F0F0F0] bg-no-repeat bg-[length:0%_2px] bg-bottom hover:bg-[length:100%_2px] transition-all duration-500 h-[30px]">Contact</button></div>
+        </div>
+    </header>
+    <div class="rounded-lg overflow-hidden mb-[50px] mx-[20px]"><img src="fotos/macaco-prego2.jpg" alt=""
+            class="x-[10px] w-screen h-screen" id="Imagem1"></div>
+    <div class="grid grid-cols-3 gap-[10px] mb-[50px]">
+        <div class="my-[50px] rounded-lg bg-[#1e5631] col-span-2 ml-[20px] text-[#F0F0F0] shadow-lg">
+            <h2 class="font-bold text-center my-[10px] text-2xl">O QUE É A EXTINÇÃO DE ESPÉCIES?</h2>
+            <p class="text-[#F0F0F0] p-[10px] text-lg">A extinção de espécies ocorre quando uma espécie deixa de existir
+                completamente, sem nenhum exemplar vivo, tornando impossível sua reprodução ou sobrevivência. Esse
+                processo é considerado, segundo especialistas, um dos sinais mais graves de desequilíbrio ambiental, já
+                que significa a perda definitiva da contribuição daquela espécie para o ecossistema. A extinção de
+                espécies gera desequilíbrio ecológico, prejudica a cadeia alimentar e ameaça serviços essenciais da
+                natureza, como a polinização e o controle de pragas, afetando diretamente os seres humanos. Além dos
+                impactos ambientais, a extinção de espécies também afeta a economia e a cultura humana. A perda da
+                biodiversidade compromete setores como a agricultura, a pesca e o turismo, que dependem diretamente da
+                variedade de espécies. Culturalmente, comunidades tradicionais perdem símbolos e conhecimentos
+                relacionados aos animais e plantas extintos, tornando o impacto da extinção um problema que ultrapassa o
+                âmbito ambiental e atinge a sociedade como um todo.
+        </div>
+        <div class="my-[50px] rounded-lg bg-[#1e5631] mr-[20px] overflow-hidden shadow-lg">
+            <img src="fotos/jacare-acu3.jpg" alt="" class="min-h-full">
+        </div>
+        <div class="my-[50px] rounded-lg bg-[#1e5631] ml-[20px] overflow-hidden shadow-lg">
+            <img src="fotos/Onça-Pintada.webp" alt="">
+        </div>
+        <div class="my-[50px] rounded-lg bg-[#1e5631] col-span-2  mr-[20px] text-[#F0F0F0] shadow-lg">
+            <h2 class="font-bold text-center my-[10px] text-2xl">O QUE CAUSA A EXTINÇÃO DE ESPÉCIES?</h2>
+            <p class="text-[#F0F0F0] p-[10px] text-lg">A extinção de espécies representa uma grave ameaça à
+                biodiversidade mundial, sendo provocada principalmente pela ação humana. O desmatamento para expansão
+                agrícola, a caça ilegal, a introdução de espécies invasoras e a poluição de habitats naturais contribuem
+                significativamente para a redução de diversas populações animais e vegetais. Além disso, as mudanças
+                climáticas intensificam esse processo ao alterar ecossistemas inteiros, dificultando a sobrevivência de
+                espécies adaptadas a condições específicas. Esse fenômeno causa desequilíbrios ecológicos, prejudica a
+                manutenção dos serviços ambientais e afeta diretamente a qualidade de vida humana, indicando a
+                necessidade urgente de estratégias de conservação e maior conscientização coletiva.
+            </p>
+        </div>
+        <div class="my-[50px] rounded-lg bg-[#1e5631] ml-[20px] text-[#F0F0F0] shadow-lg">
+            <h2 class="text-center text-[#F0F0F0] text-base font-bold my-[10px]">ESPÉCIES AMEAÇADAS DE EXTINÇÃO NO MUNDO
+            </h2>
+            <div class="donut-chart">
+                <span class="center-text">28%</span>
+            </div>
+        </div>
+        <div class="rounded-lg shadow-lg overflow-hidden my-[50px] max-h-[310px]"><img src="fotos/Raposa.jpg" alt="">
+        </div>
+        <div class="my-[50px] rounded-lg bg-[#1e5631] mr-[20px] text-[#F0F0F0] shadow-lg">
+            <h2 class="text-center text-[#F0F0F0] text-base font-bold my-[10px]">ESPÉCIES AMEAÇADAS DE EXTINÇÃO NO
+                BRASIL</h2>
+            <div class="donut-chart2">
+                <span class="center-text">24%</span>
+            </div>
+        </div>
+        <div class="rounded-lg shadow-lg overflow-hidden my-[50px] max-h-[310px] ml-[20px]"><img
+                src="fotos/Lobo-guará.webp" alt="">
+        </div>
+        <div class="my-[50px] rounded-lg bg-[#1e5631] text-[#F0F0F0] shadow-lg">
+            <h2 class="text-center text-[#F0F0F0] text-base font-bold my-[10px]">ESPÉCIES AMEAÇADAS DE EXTINÇÃO NO
+                BRASIL</h2>
+            <div class="grid grid-cols-3">
+                <div class="ml-[10px] mt-[65px]">
+                    <h2 class="text-[#1A1A1A] font-bold">Estado Crítico <span class="text-[#F0F0F0]">25%</span></h2>
+                    <h2 class="text-[#C84B31] font-bold">Em perigo <span class="text-[#F0F0F0]">35%</span></h2>
+                    <h2 class="text-[#D9A404] font-bold">Vulnerável <span class="text-[#F0F0F0]">30%</span></h2>
+                    <h2 class="text-[#8B5E3C] font-bold">Preocupante <span class="text-[#F0F0F0]">10%</span></h2>
+                </div>
+                <div class="donut-chart3 col-span-2">
+                </div>
+            </div>
+        </div>
+        <div class="rounded-lg shadow-lg overflow-hidden my-[50px] max-h-[310px] mr-[20px]"><img
+                src="fotos/tatu-bola.webp" alt="">
+        </div>
+        <div class="my-[50px] rounded-lg bg-[#1e5631] text-[#F0F0F0] shadow-lg ml-[20px]">
+            <h2 class="text-center text-[#F0F0F0] text-base font-bold my-[10px]">CAUSAS DE EXTINÇÃO</h2>
+            <div class="grid grid-cols-3">
+                <div class="ml-[10px] mt-[55px]">
+                    <h2 class="text-[#0B3D0B] font-bold">Desmatamento<span class="text-[#F0F0F0]">40%</span></h2>
+                    <h2 class="text-[#1A1A1A] font-bold">Poluição <span class="text-[#F0F0F0]">20%</span></h2>
+                    <h2 class="text-[#C84B31] font-bold">Caça <span class="text-[#F0F0F0]">15%</span></h2>
+                    <h2 class="text-[#8B5E3C] font-bold">Espécies invasoras <span class="text-[#F0F0F0]">15%</span></h2>
+                    <h2 class="text-[#D9A404] font-bold">Mudança climática <span class="text-[#F0F0F0]">10%</span></h2>
+                </div>
+                <div class="donut-chart4 col-span-2">
+                </div>
+            </div>
+        </div>
+        <div class="rounded-lg shadow-lg overflow-hidden my-[50px] max-h-[310px]"><img src="fotos/tamanduá-bandeira.jpg"
+                alt="">
+        </div>
+        <div class="my-[50px] rounded-lg bg-[#1e5631] text-[#F0F0F0] shadow-lg mr-[20px]">
+            <h2 class="text-center text-[#F0F0F0] text-base font-bold my-[10px]">EXTINÇÃO POR GRUPO DE ANIMAIS</h2>
+            <div class="grid grid-cols-3">
+                <div class="ml-[10px] mt-[65px]">
+                    <h2 class="text-[#8B5E3C] font-bold">Mamíferos <span class="text-[#F0F0F0]">40%</span></h2>
+                    <h2 class="text-[#D9A404] font-bold">Aves <span class="text-[#F0F0F0]">25%</span></h2>
+                    <h2 class="text-[#0B3D0B] font-bold">Répteis <span class="text-[#F0F0F0]">15%</span></h2>
+                    <h2 class="text-[#C84B31] font-bold">Anfíbios <span class="text-[#F0F0F0]">10%</span></h2>
+                    <h2 class="text-[#1A1A1A] font-bold">Insetos <span class="text-[#F0F0F0]">10%</span></h2>
+                </div>
+                <div class="donut-chart5 col-span-2">
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-[#083C1E] grid grid-cols-3 gap-[200px]">
+        <img src="fotos/Logo.png" alt="" class="p-[10px]">
+        <div>
+            <h2 class="text-center text-2xl text-[#F0F0F0] font-bold">Race To Survival</h2>
+        </div>
+    </footer>
+    <script>
+        const imagem1 = document.querySelector("#Imagem1");
+        let ultimoValor = 0;
+        let penultimoValor = 0;
+
+        function GerarImagem1() {
+            let variavel;
+
+            do {
+                variavel = Math.floor(Math.random() * 4) + 1;
+            } while (variavel === ultimoValor || variavel === penultimoValor);
+
+            if (variavel === 1) {
+                imagem1.src = "fotos/macaco-prego2.jpg";
+            } else if (variavel === 2) {
+                imagem1.src = "fotos/Arara-azul.webp";
+            } else if (variavel === 3) {
+                imagem1.src = "fotos/jacare-acu2.jpg";
+            } else if (variavel === 4) {
+                imagem1.src = "fotos/Rinoceronte-de-java2.jpg";
+            }
+
+            penultimoValor = ultimoValor;
+            ultimoValor = variavel;
+        }
+        setInterval(GerarImagem1, 7000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Vertical → Horizontal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Remove o scroll padrão horizontal e vertical */
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Contêiner externo com overflow oculto -->
+  <div id="scroll-container" class="w-screen h-screen overflow-hidden relative">
+    <!-- Contêiner de conteúdo com scroll horizontal -->
+    <div id="horizontal-scroll" class="flex w-[300vw] h-screen transition-transform duration-300 ease-out">
+      <section class="w-screen h-screen bg-blue-500 text-white flex items-center justify-center text-4xl">Slide 1</section>
+      <section class="w-screen h-screen bg-green-500 text-white flex items-center justify-center text-4xl">Slide 2</section>
+      <section class="w-screen h-screen bg-purple-500 text-white flex items-center justify-center text-4xl">Slide 3</section>
+    </div>
+  </div>
+
+  <script>
+    const container = document.getElementById('scroll-container');
+    const content = document.getElementById('horizontal-scroll');
+    let scrollX = 0;
+
+    container.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      // Inverter o scroll vertical para horizontal
+      scrollX += e.deltaY;
+
+      // Limita o scroll
+      const maxScroll = content.scrollWidth - window.innerWidth;
+      if (scrollX < 0) scrollX = 0;
+      if (scrollX > maxScroll) scrollX = maxScroll;
+
+      // Aplica o deslocamento
+      content.style.transform = `translateX(-${scrollX}px)`;
+    }, { passive: false });
+  </script>
+
+</body>
+</html>
