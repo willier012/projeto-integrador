@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="fotos/Logo.png" type="image/png">
+</head>
+<style>
+ @keyframes spin-once {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(720deg);
+        }
+    }
+
+    .circulo {
+        width: 125px;
+        height: 125px;
+        background-color: #000000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #C84B31;
+        font-size: 45px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+    }
+
+    .circulo2 {
+        width: 125px;
+        height: 125px;
+        background-color: #000000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #F0F0F0;
+        font-size: 45px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+    }
+
+    .circulo3 {
+        width: 125px;
+        height: 125px;
+        background-color: #C84B31;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #d69c90;
+        font-size: 45px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+    }
+
+    .circulo4 {
+        width: 125px;
+        height: 125px;
+        background-color: #FF8033;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fdb487;
+        font-size: 45px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+    }
+
+    .circulo5 {
+        width: 125px;
+        height: 125px;
+        background-color: #D9A404;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #e7d083;
+        font-size: 45px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+    }
+
+    .circulo6 {
+        width: 125px;
+        height: 125px;
+        background-color: #0F768F;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #65c6e1;
+        font-size: 45px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+    }
+
+    .circulo7 {
+        width: 125px;
+        height: 125px;
+        background-color: #0F768F;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #F0F0F0;
+        font-size: 45px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+    }
+
+    .donut-chart {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: conic-gradient(#D9A404 0% 28%,
+                #8B5E3C 28% 100%);
+        position: relative;
+        margin: 15px auto;
+    }
+
+    .donut-chart::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 75px;
+        height: 75px;
+        background: #1E5631;
+        border-radius: 50%;
+    }
+
+    .donut-chart2 {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: conic-gradient(#D9A404 0% 24%,
+                #8B5E3C 24% 100%);
+        position: relative;
+        margin: 15px auto;
+    }
+
+    .donut-chart2::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 75px;
+        height: 75px;
+        background: #1E5631;
+        border-radius: 50%;
+    }
+
+    .donut-chart3 {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: conic-gradient(#2E9A5E 0% 40%,
+                #1A1A1A 40% 60%,
+                #C84B31 60% 75%,
+                #8B5E3C 75% 90%,
+                #D9A404 90% 100%);
+        position: relative;
+        margin: 15px auto;
+    }
+
+    .donut-chart3::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 75px;
+        height: 75px;
+        background: #1E5631;
+        border-radius: 50%;
+    }
+
+    .center-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #F0F0F0;
+        font-weight: bold;
+        font-size: 24px;
+        pointer-events: none;
+    }
+</style>
+
+<body class="bg-[#0B3D0B] select-none">
+    <header
+        class="fixed top-0 left-0 sm:w-full w-[400px] z-50 grid grid-cols-2 sm:grid-cols-3 gap-2 bg-[#0A360A] text-[#F0F0F0] rounded-b-3xl">
+        <!-- abertura da parte da logo e do titulo do header -->
+        <div class="flex">
+
+            <img src="fotos/Logo.png" alt="" class="ml-[4px] mt-[4px] max-h-[60px] sm:hover-spin-once">
+            <button
+                class="cursor-default ml-[25px] mt-[20px] font-bold text-center bg-gradient-to-r from-[#F0F0F0] to-[#F0F0F0] bg-no-repeat bg-[length:0%_2px] bg-bottom sm:hover:bg-[length:100%_2px] sm:transition-all duration-500 h-[30px]">RTS</button>
+            <!-- fechamento da logo e do titulo do header -->
+        </div>
+        <!-- abertura dos botões do header -->
+        <div class=" sm:col-span-2 sm:col-start-3 grid grid-cols-3 gap-2 mx-2">
+            <!-- botão Home -->
+            <div class="flex"><button onclick="window.location.href='index.html'"
+                    class="my-[20px] sm:my[1px] sm:font-bold text-center bg-gradient-to-r from-[#F0F0F0] to-[#F0F0F0] bg-no-repeat bg-[length:0%_2px] bg-bottom hover:bg-[length:100%_2px] transition-all duration-500 h-[30px] hover:scale-[1.1]">Home</button>
+            </div>
+            <!-- botão About -->
+            <div class="flex"><button
+                    class="my-[20px] sm:my[1px] sm:font-bold text-center bg-gradient-to-r from-[#F0F0F0] to-[#F0F0F0] bg-no-repeat bg-[length:0%_2px] bg-bottom hover:bg-[length:100%_2px] transition-all duration-500 h-[30px] hover:scale-[1.1]">About</button>
+            </div>
+            <!-- botão Contact -->
+            <div class="flex"><button onclick="window.location.href='especies.html'"
+                    class="my-[20px] sm:my[1px] sm:font-bold text-center bg-gradient-to-r from-[#F0F0F0] to-[#F0F0F0] bg-no-repeat bg-[length:0%_2px] bg-bottom hover:bg-[length:100%_2px] transition-all duration-500 h-[30px] hover:scale-[1.1]">Espécies</button>
+            </div>
+            <!-- fechamento dos botões do header -->
+        </div>
+        <!-- final do header -->
+    </header>
+
+    <div
+        class="rounded-lg overflow-hidden mb-[10px] sm:mb-[50px] mx-[10px] sm:mx-[20px] sticky top-[0px] mt-[50px] sm:mt-0 -z-10">
+        <img src="fotos/macaco-prego2.jpg" alt="" class="x-[10px] w-screen h-[200px] sm:h-screen" id="Imagem1">
+    </div>
+    <div class="w-full bg-[#0B3D0B] sm:grid grid-cols-3">
+        <div
+            class="hidden sm:grid sm:col-span-3 sm:mx-[20px] sm:my-[50px] bg-[#1e5631] sm:min-h-[310px] sm:rounded-lg grid-cols-7 sm:gap-[10px]">
+            <h2 class="col-span-7 text-center text-[#F0F0F0] text-2xl font-bold mt-[10px]">LISTA VERMELHA DA IUCN</h2>
+            <div class="flex justify-center max-h-285">
+                <div id="circulo1"
+                    class=" circulo mx-[15px] my-[80px] transform hover:scale-[1.2] transition duration-500 hover:shadow-2xl">
+                    <span>EX</span>
+                </div>
+            </div>
+            <div class="flex justify-center max-h-285">
+                <div id="circulo2"
+                    class=" circulo2 mx-[15px] my-[80px] transform hover:scale-[1.2] transition duration-500 hover:shadow-2xl">
+                    <span>EW</span>
+                </div>
+            </div>
+            <div class="flex justify-center max-h-285">
+                <div id="circulo3"
+                    class=" circulo3 mx-[15px] my-[80px] transform hover:scale-[1.2] transition duration-500 hover:shadow-2xl">
+                    <span>CR</span>
+                </div>
+            </div>
+            <div class="flex justify-center max-h-285">
+                <div id="circulo4"
+                    class=" circulo4 mx-[15px] my-[80px] transform hover:scale-[1.2] transition duration-500 hover:shadow-2xl">
+                    <span>EN</span>
+                </div>
+            </div>
+            <div class="flex justify-center max-h-285">
+                <div id="circulo5"
+                    class=" circulo5 mx-[15px] my-[80px] transform hover:scale-[1.2] transition duration-500 hover:shadow-2xl">
+                    <span>VU</span>
+                </div>
+            </div>
+            <div class="flex justify-center max-h-285">
+                <div id="circulo6"
+                    class=" circulo6 mx-[15px] my-[80px] transform hover:scale-[1.2] transition duration-500 hover:shadow-2xl">
+                    <span>NT</span>
+                </div>
+            </div>
+            <div class="flex justify-center max-h-285">
+                <div id="circulo7"
+                    class=" circulo7 mx-[15px] my-[80px] transform hover:scale-[1.2] transition duration-500 hover:shadow-2xl">
+                    <span>LC</span>
+                </div>
+            </div>
+             <p id="p1" class="text-[#F0F0F0] text-lg col-span-7 mx-[40px] mb-[10px]">A Lista Vermelha de Espécies
+                Ameaçadas da União Internacional para a Conservação da Natureza (IUCN) serve como a fonte de informação
+                mais abrangente do mundo sobre o status de risco de extinção global de espécies animais, fúngicas e
+                vegetais. Seu principal objetivo é orientar e impulsionar as ações de conservação da biodiversidade.</p>
+        </div>
+         <div class="hidden sm:block my-[50px] mt-[100px] rounded-lg bg-[#1e5631] ml-[20px] overflow-hidden shadow-lg">
+            <img src="fotos/jacare-acu3.jpg" alt="" class="min-h-full">
+        </div>
+        <div
+            class="my-[10px] mx-[10px] sm:my-[50px] rounded-lg bg-[#1e5631] sm:col-span-2  sm:mr-[20px] text-[#F0F0F0] shadow-lg sm:mt-[100px] sm:origin-right sm:transform sm:hover:z-30 sm:hover:scale-[1.05] sm:transition sm:duration-500 sm:hover:shadow-2xl h-[200px]">
+            <h2 class="font-bold text-center my-[5px] sm:my-[10px] sm:text-2xl text-lg">O QUE É A EXTINÇÃO DE
+                ESPÉCIES?</h2>
+            <p class="text-[#F0F0F0] sm:pt-[10px] indent-6 px-[10px] sm:col-span-2">A extinção de espécies ocorre quando uma
+                espécie deixa de existir completamente, sem nenhum exemplar vivo, tornando impossível sua reprodução
+                ou
+                sobrevivência....</p>
+        </div>
+        <div
+            class="my-[10px] mx-[10px] sm:my-[50px] rounded-lg bg-[#1e5631] sm:col-span-2  sm:ml-[20px] text-[#F0F0F0] shadow-lg sm:mt-[138px] sm:origin-left sm:transform sm:hover:z-30 sm:hover:scale-[1.05] sm:transition sm:duration-500 sm:hover:shadow-2xl h-[200px]">
+            <h2 class="font-bold text-center my-[5px] sm:my-[10px] sm:text-2xl text-lg">O QUE CAUSA A EXTINÇÃO DE
+                ESPÉCIES?</h2>
+            <p class="text-[#F0F0F0] sm:pt-[10px] indent-6 px-[10px]">A extinção de espécies representa uma grave
+                ameaça à
+                biodiversidade mundial, sendo provocada principalmente pela ação humana....</p>
+        </div>
+        <div class="mx-[10px] sm:mx-0 sm:mb-[50px] mt-[20px] rounded-lg bg-[#1e5631] sm:mr-[20px] overflow-hidden shadow-lg">
+            <img src="fotos/Onça-Pintada.webp" alt="">
+        </div>
+        <div
+            class="my-[10px] sm:ml-[20px] sm:my-[50px] rounded-lg bg-[#1e5631] text-[#F0F0F0] shadow-lg sm:origin-left sm:hover:z-30 sm:hover:shadow-2xl sm:transform sm:hover:scale-[1.05] sm:transition sm:duration-300">
+            <h2 class="text-center text-[#F0F0F0] text-base font-bold sm:my-[10px]">ESPÉCIES AMEAÇADAS DE EXTINÇÃO
+            </h2>
+            <h2 class="text-[#F0F0F0] text-base font-bold text-center">NO MUNDO</h2>
+            <div class="donut-chart">
+                <span class="center-text">28%</span>
+            </div>
+        </div>
+        <div
+            class="mx-[10px] my-[10px] sm:my-[50px] rounded-lg bg-[#1e5631] text-[#F0F0F0] shadow-lg sm:hover:z-30 sm:hover:shadow-2xl sm:transform sm:hover:scale-[1.05] sm:transition sm:duration-300">
+            <h2 class="text-center text-[#F0F0F0] text-base font-bold sm:my-[10px]">ESPÉCIES AMEAÇADAS DE EXTINÇÃO
+            </h2>
+            <h2 class="text-[#F0F0F0] text-base font-bold text-center">NO BRASIL</h2>
+            <div class="donut-chart2">
+                <span class="center-text">24%</span>
+            </div>
+        </div>
+        <div
+            class="mr-[10px] sm:my-[50px] rounded-lg bg-[#1e5631] text-[#F0F0F0] shadow-lg sm:origin-right sm:hover:z-30 sm:hover:shadow-2xl sm:transform sm:hover:scale-[1.05] sm:transition sm:duration-500">
+            <h2 class="text-center text-[#F0F0F0] text-base font-bold my-[10px]">PERCENTUAL DE RISCO</h2>
+            <div class="grid grid-cols-3">
+                <div class="ml-[10px] sm:mt-[65px]">
+                    <h2 class="text-[#1A1A1A] font-bold">Estado Crítico <span class="text-[#F0F0F0]">25%</span></h2>
+                    <h2 class="text-[#C84B31] font-bold">Em perigo <span class="text-[#F0F0F0]">35%</span></h2>
+                    <h2 class="text-[#D9A404] font-bold">Vulnerável <span class="text-[#F0F0F0]">30%</span></h2>
+                    <h2 class="text-[#8B5E3C] font-bold">Preocupante <span class="text-[#F0F0F0]">10%</span></h2>
+                </div>
+                <div class="donut-chart3 col-span-2">
+                </div>
+            </div>
+            <!-- fechamento gráfico3 -->
+        </div>
+        <footer class="bg-[#0A360A] sm:grid grid-cols-3 gap-[5px] sm:gap-[200px] col-span-3">
+            <img src="fotos/Logo.png" alt="" class="p-[10px] hidden sm:block">
+            <div>
+                <h2 class="text-center text-base sm:text-2xl text-[#F0F0F0] font-bold">RACE TO SURVIVAL</h2>
+            </div>
+            <!-- fechamento footer -->
+        </footer>
+    </div>
+</body>
+<script>
+    const circulo1 = document.querySelector("#circulo1")
+    const circulo2 = document.querySelector("#circulo2")
+    const circulo3 = document.querySelector("#circulo3")
+    const circulo4 = document.querySelector("#circulo4")
+    const circulo5 = document.querySelector("#circulo5")
+    const circulo6 = document.querySelector("#circulo6")
+    const circulo7 = document.querySelector("#circulo7")
+    const p1 = document.querySelector("#p1")
+    const imagem1 = document.querySelector("#Imagem1");
+    let ultimoValor = 1;
+    let penultimoValor = 0;
+    textoListaVermelha = "A Lista Vermelha de Espécies Ameaçadas da União Internacional para a Conservação da Natureza (IUCN) serve como a fonte de informação mais abrangente do mundo sobre o status de risco de extinção global de espécies animais, fúngicas e vegetais. Seu principal objetivo é orientar e impulsionar as ações de conservação da biodiversidade."
+
+    circulo1.addEventListener('mouseenter', () => {
+            p1.textContent = "EX(extinto): Quando não há qualquer dúvida razoável que o último indivíduo morreu, a espécie é considerada extinta. O momento de extinção é geralmente considerado como sendo a morte do último indivíduo da espécie, embora a capacidade de sobrevivência da espécie — devido ao baixo número de indivíduos — possa ter sido perdida antes deste ponto."
+        });
+        circulo1.addEventListener('mouseleave', () => {
+            p1.textContent = textoListaVermelha
+        });
+        circulo2.addEventListener('mouseenter', () => {
+            p1.textContent = "EW(Extinto em Natureza): Uma espécie é presumida como tal quando estudos exaustivos em seus habitats conhecidos e/ou esperados, em momentos apropriados, ao longo de sua distribuição histórica, não conseguem encontrar um único indivíduo. São espécies conhecidas por sobreviver apenas em cativeiro ou como uma população naturalizada fora de sua área natural."
+        });
+        circulo2.addEventListener('mouseleave', () => {
+            p1.textContent = textoListaVermelha
+        });
+        circulo3.addEventListener('mouseenter', () => {
+            p1.textContent = "CR(Criticamente Ameaçada): É a categoria de maior risco atribuída pela Lista Vermelha da IUCN para espécies selvagens. São aquelas que enfrentam risco extremamente elevado de extinção na natureza. Há 2.169 animais e 1.957 plantas com essa avaliação."
+        });
+        circulo3.addEventListener('mouseleave', () => {
+            p1.textContent = textoListaVermelha
+        });
+        circulo4.addEventListener('mouseenter', () => {
+            p1.textContent = "EN(Em Perigo): Quando a melhor evidência disponível indica que uma espécie provavelmente será extinta num futuro próximo. Este é o segundo estado de conservação mais grave para as espécies na natureza. 3.219 animais e 3.009 plantas estão ameaçadas de extinção em todo o mundo."
+        });
+        circulo4.addEventListener('mouseleave', () => {
+            p1.textContent = textoListaVermelha
+        });
+        circulo5.addEventListener('mouseenter', () => {
+            p1.textContent = "VU(Vulnerável): Uma espécie está vulnerável quando as melhores evidências disponíveis indicam que enfrenta um risco elevado de extinção na natureza em um futuro bem próximo, a menos que as circunstâncias que ameaçam a sua sobrevivência e reprodução melhorem."
+        });
+        circulo5.addEventListener('mouseleave', () => {
+            p1.textContent = textoListaVermelha
+        });
+        circulo6.addEventListener('mouseenter', () => {
+            p1.textContent = "NT(Quase Ameaçada): Uma espécie é presumida como tal quando estudos exaustivos em seus habitats conhecidos e/ou esperados, em momentos apropriados, ao longo de sua distribuição histórica, não conseguem encontrar um único indivíduo. São espécies conhecidas por sobreviver apenas em cativeiro ou como uma população naturalizada fora de sua área natural."
+        });
+        circulo6.addEventListener('mouseleave', () => {
+            p1.textContent = textoListaVermelha
+        });
+        circulo7.addEventListener('mouseenter', () => {
+            p1.textContent = "LC(Pouco Preocupante): Esta é a categoria de risco mais baixo. Se a espécie não se enquadra nas 8 categorias que denotam algum grau de risco de extinção (veja as categorias abaixo), ela é classificada como “Segura ou Pouco Preocupante”. Espécies abundantes e amplamente distribuídas são incluídas nesta categoria."
+        });
+        circulo7.addEventListener('mouseleave', () => {
+            p1.textContent = textoListaVermelha
+        });
+
+    function GerarImagem1() {
+        let variavel = 1;
+
+        do {
+            variavel = Math.floor(Math.random() * 4) + 1;
+        } while (variavel === ultimoValor || variavel === penultimoValor);
+
+        if (variavel === 1) {
+            imagem1.src = "fotos/macaco-prego2.jpg";
+        } else if (variavel === 2) {
+            imagem1.src = "fotos/Arara-Azul.webp";
+        } else if (variavel === 3) {
+            imagem1.src = "fotos/jacare-acu2.jpg";
+        } else if (variavel === 4) {
+            imagem1.src = "fotos/Rinoceronte-de-java2.jpg";
+        }
+
+        penultimoValor = ultimoValor;
+        ultimoValor = variavel;
+    }
+    setInterval(GerarImagem1, 5000);
+</script>
+
+</html>
