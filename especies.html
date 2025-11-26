@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="fotos/Logo.png" type="image/png">
+</head>
+<body class="bg-[#0B3D0B] select-none">
+    <!-- header que fica fixo na tela -->
+    <header
+        class="fixed top-0 left-0 w-full z-50 grid grid-cols-3 gap-[150px] bg-[#0A360A] text-[#F0F0F0] rounded-b-3xl">
+        <!-- abertura da parte da logo e do titulo do header -->
+        <div class=" p-[6px] px-[10px] flex">
+
+            <img src="fotos/Logo.png" alt="" class="max-h-[60px] hover-spin-once">
+            <button
+                class="cursor-default ml-[25px] mt-[14px] font-bold text-center bg-gradient-to-r from-[#F0F0F0] to-[#F0F0F0] bg-no-repeat bg-[length:0%_2px] bg-bottom hover:bg-[length:100%_2px] transition-all duration-500 h-[30px]">RTS</button>
+            <!-- fechamento da logo e do titulo do header -->
+        </div>
+        <!-- abertura dos botões do header -->
+        <div class="col-start-3 grid grid-cols-3 gap-[5px] mx-[10px]">
+            <!-- botão Home -->
+            <div class="flex"><button onclick="window.location.href='index.html'"
+                    class="my-[20px] font-bold text-center bg-gradient-to-r from-[#F0F0F0] to-[#F0F0F0] bg-no-repeat bg-[length:0%_2px] bg-bottom hover:bg-[length:100%_2px] transition-all duration-500 h-[30px] hover:scale-[1.1]">Home</button>
+            </div>
+            <!-- botão About -->
+            <div class="flex"><button
+                    class="my-[20px] font-bold text-center bg-gradient-to-r from-[#F0F0F0] to-[#F0F0F0] bg-no-repeat bg-[length:0%_2px] bg-bottom hover:bg-[length:100%_2px] transition-all duration-500 h-[30px] hover:scale-[1.1]">About</button>
+            </div>
+            <!-- botão Contact -->
+            <div class="flex"><button onclick="window.location.href='especies.html'"
+                    class="my-[20px] font-bold text-center bg-gradient-to-r from-[#F0F0F0] to-[#F0F0F0] bg-no-repeat bg-[length:0%_2px] bg-bottom hover:bg-[length:100%_2px] transition-all duration-500 h-[30px] hover:scale-[1.1]">Espécies</button>
+            </div>
+            <!-- fechamento dos botões do header -->
+        </div>
+        <!-- final do header -->
+    </header>
+    <div class="grid grid-cols-3 gap-[10px]">
+        <div>
+            <p>aaaaa</p>
+        </div>
+        <div>
+            <p>aaaaa</p>
+        </div>
+       <div>
+            <p>aaaaa</p>
+        </div>
+    </div>
+</body>
+</html>
