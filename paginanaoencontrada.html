@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Página não encontrada</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 300px; background: #0B3D0B; }
+    h1 { font-size: 48px; color: #ffffff; }
+    p { font-size: 20px; color: #adadad; }
+    a { color: #007BFF; text-decoration: none; }
+  </style>
+  <style>
+    @keyframes breathe {
+      0% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+    }
+
+    .pulse-text {
+      font-size: 2rem;
+      color: #F0F0F0;
+      display: inline-block;
+      animation: breathe 3s ease-in-out infinite; /* mais lento e suave */
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center justify-center h-screen">
+<header
+        class="fixed top-0 left-0 sm:w-full w-[400px] z-50 grid grid-cols-2 sm:grid-cols-3 gap-2 bg-[#0A360A] text-[#F0F0F0] rounded-b-3xl">
+        <!-- abertura da parte da logo e do titulo do header -->
+        <div class="flex">
+
+            <img src="fotos/Logo.png" alt="" class="ml-[4px] mt-[4px] max-h-[60px] sm:hover-spin-once">
+            <button
+                class="cursor-default ml-[25px] mt-[20px] font-bold text-center bg-gradient-to-r from-[#F0F0F0] to-[#F0F0F0] bg-no-repeat bg-[length:0%_2px] bg-bottom sm:hover:bg-[length:100%_2px] sm:transition-all duration-500 h-[30px]">RTS</button>
+            <!-- fechamento da logo e do titulo do header -->
+        </div>
+        <!-- abertura dos botões do header -->
+        <div class=" sm:col-span-2 sm:col-start-3 grid grid-cols-3 gap-2 mx-2">
+            <!-- botão Home -->
+            <div class="flex"><button onclick="window.location.href='index.html'"
+                    class="my-[20px] sm:my[1px] sm:font-bold text-center bg-gradient-to-r from-[#F0F0F0] to-[#F0F0F0] bg-no-repeat bg-[length:0%_2px] bg-bottom hover:bg-[length:100%_2px] transition-all duration-500 h-[30px] hover:scale-[1.1]">Home</button>
+            </div>
+            <!-- botão About -->
+            <div class="flex"><button button onclick="window.location.href='paginanaoencontrada.html'"
+                    class="my-[20px] sm:my[1px] sm:font-bold text-center bg-gradient-to-r from-[#F0F0F0] to-[#F0F0F0] bg-no-repeat bg-[length:0%_2px] bg-bottom hover:bg-[length:100%_2px] transition-all duration-500 h-[30px] hover:scale-[1.1]">About</button>
+            </div>
+            <!-- botão Contact -->
+            <div class="flex"><button onclick="window.location.href='especies.html'"
+                    class="my-[20px] sm:my[1px] sm:font-bold text-center bg-gradient-to-r from-[#F0F0F0] to-[#F0F0F0] bg-no-repeat bg-[length:0%_2px] bg-bottom hover:bg-[length:100%_2px] transition-all duration-500 h-[30px] hover:scale-[1.1]">Species</button>
+            </div>
+            <!-- fechamento dos botões do header -->
+        </div>
+        <!-- final do header -->
+    </header>
+
+  <img class="w-60 h-auto mb-6" src="fotos/Logo.png" alt="">
+  <h1 class="text-xl">Desculpe, estamos trabalhando nisso.</h1>
+  <p class="pulse-text pt-5">Aguarde.</p>
+</body>
+</html>

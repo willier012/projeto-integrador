@@ -1,18 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .fade {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+  </style>
 </head>
-<body class="bg-gray-950">
-    <div class="max-w-full">
-    <img src="arararrinha.jpg" alt="" class="flow">
-    </div>
-    <script> setTimeout(() => {
+<body class="bg-black">
+  <img src="fotos/Design sem nome (1).png" alt="" class="w-screen h-screen fade" id="imagem">
+
+  <script>
+    const img = document.querySelector("#imagem");
+
+    setTimeout(() => {
+      img.src = "fotos/Design sem nome.png";
+      img.classList.remove("fade");
+      void img.offsetWidth;
+      img.classList.add("fade");
+    }, 500);
+    setTimeout(() => {
         window.location.href = "index.html";
-    }, 3000);
-    </script>
+    }, 5000);
+  </script>
 </body>
 </html>
